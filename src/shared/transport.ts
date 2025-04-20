@@ -1,5 +1,5 @@
-import { AuthInfo } from "../server/auth/types.js";
 import { JSONRPCMessage, RequestId } from "../types.js";
+import { AuthInfo } from "./auth.js";
 
 /**
  * Options for sending a JSON-RPC message.

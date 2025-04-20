@@ -1,5 +1,26 @@
 import { JSONRPCMessage } from '../../types.js';
-import { EventStore } from '../../server/streamableHttp.js';
+
+
+export type StreamId = string;
+export type EventId = string;
+
+/**
+ * Interface for resumability support via event storage
+ */
+export interface EventStore {
+  /**
+   * Stores an event for later retrieval
+   * @param streamId ID of the stream the event belongs to
+   * @param message The JSON-RPC message to store
+   * @returns The generated event ID for the stored event
+   */
+  storeEvent(streamId: StreamId, message: JSONRPCMessage): Promise<EventId>;
+
+  replayEventsAfter(lastEventId: EventId, { send }: {
+    send: (eventId: EventId, message: JSONRPCMessage) => Promise<void>
+  }): Promise<StreamId>;
+}
+
 
 /**
  * Simple in-memory implementation of the EventStore interface for resumability
