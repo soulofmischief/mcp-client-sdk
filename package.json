@@ -1,19 +1,18 @@
 {
-  "name": "@moinfra/mcp-client-sdk",
+  "name": "@soulofmischief/mcp-client-sdk",
   "version": "1.10.1",
-  "description": "Model Context Protocol implementation for TypeScript (Browser-compatible version)",
+  "description": "Browser-compatible Model Context Protocol implementation for TypeScript",
   "license": "MIT",
   "author": "Anthropic, PBC (https://anthropic.com)",
   "homepage": "https://modelcontextprotocol.io",
-  "bugs": "https://github.com/moinfra/mcp-client-sdk/issues",
+  "bugs": "https://github.com/soulofnischief/mcp-client-sdk/issues",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moinfra/mcp-client-sdk.git"
+    "url": "git+https://github.com/soulofmischief/mcp-client-sdk.git"
   },
   "keywords": [
     "modelcontextprotocol",
-    "moinfra",
     "daan",
     "mcp"
   ],

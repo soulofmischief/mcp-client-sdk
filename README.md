@@ -1,6 +1,6 @@
-# @moinfra/mcp-client-sdk
+# @soulofmischief/mcp-client-sdk
 
-![NPM Version](https://img.shields.io/npm/v/%40moinfra%2Fmcp-client-sdk) ![MIT licensed](https://img.shields.io/npm/l/%40moinfra%2Fmcp-client-sdk)
+![NPM Version](https://img.shields.io/npm/v/%40soulofmischief%2Fmcp-client-sdk) ![MIT licensed](https://img.shields.io/npm/l/%40soulofmischief%2Fmcp-client-sdk)
 
 Browser-compatible TypeScript Client SDK for the Model Context Protocol (MCP)
 
@@ -8,7 +8,7 @@ This repository is a fork of the official Model Context Protocol (MCP) TypeScrip
 
 ## Overview
 
-This version of the SDK has been adapted by [@moinfra](https://github.com/moinfra) specifically for use in environments that may not have a standard Node.js runtime, such as web browsers or mobile applications. The primary modification is the removal of server-specific components and transports (like Stdio and Streamable HTTP server handlers) that rely on Node.js APIs.
+This version of the SDK has been adapted for use in environments that may not have a standard Node.js runtime, such as web browsers or mobile applications. The primary modification is the removal of server-specific components and transports (like Stdio and Streamable HTTP server handlers) that rely on Node.js APIs.
 
 Despite these modifications, this SDK retains **full client-side compatibility** with the [Model Context Protocol (MCP)](https://modelcontextprotocol.io) specification. Clients developed using this SDK can interact seamlessly with any standard MCP-compliant server.
 
@@ -17,7 +17,7 @@ A key addition in this fork is the `PseudoTransport`. This transport allows an M
 ## Installation
 
 ```
-npm install @moinfra/mcp-client-sdk
+npm install @soulofmischief/mcp-client-sdk
 ```
 
 ## Key Differences from Official SDK
@@ -39,10 +39,10 @@ The `PseudoTransport` enables direct communication between an `mcp-client-sdk` `
 This example demonstrates setting up an in-process `McpServer`, registering a simple tool, and then using the `Client` with `PseudoTransport` to interact with it.
 
 ```
-import { Client } from "@moinfra/mcp-client-sdk/client/index.js";
-import { PseudoTransport } from "@moinfra/mcp-client-sdk/client/pseudo.js";
-import { McpServer } from "@moinfra/mcp-client-sdk/server/mcp.js"; // McpServer is included for PseudoTransport use
-import { CallToolResult, Implementation } from "@moinfra/mcp-client-sdk/types.js";
+import { Client } from "@soulofmischief/mcp-client-sdk/client/index.js";
+import { PseudoTransport } from "@soulofmischief/mcp-client-sdk/client/pseudo.js";
+import { McpServer } from "@soulofmischief/mcp-client-sdk/server/mcp.js"; // McpServer is included for PseudoTransport use
+import { CallToolResult, Implementation } from "@soulofmischief/mcp-client-sdk/types.js";
 // Example UI component import (replace with your actual UI)
 // import { Button } from "./ui/Button.tsx";
 import { z } from "zod";
@@ -106,9 +106,9 @@ export function Demo() {
     }
 
     return (
-        
+
             Run Demo
-        
+
     );
 }
 ```
@@ -118,10 +118,10 @@ export function Demo() {
 Here's how you typically use the `Client` class (assuming you have a transport implementation appropriate for your environment, like one based on WebSockets or Fetch for browser usage, or the included `PseudoTransport`):
 
 ```
-import { Client } from "@moinfra/mcp-client-sdk/client/index.js";
+import { Client } from "@soulofmischief/mcp-client-sdk/client/index.js";
 // Import your chosen transport implementation
 // e.g., import { WebSocketTransport } from './my-websocket-transport.js';
-// e.g., import { PseudoTransport } from "@moinfra/mcp-client-sdk/client/pseudo.js";
+// e.g., import { PseudoTransport } from "@soulofmischief/mcp-client-sdk/client/pseudo.js";
 
 // Assume 'transport' is an initialized instance of a transport class
 // const transport = new WebSocketTransport({ url: 'ws://mcp-server.com' });
@@ -185,3 +185,6 @@ For the original SDK this fork is based on:
 
 This project retains the original MIT License. See the LICENSE file for details.
 
+## Special Thanks
+
+*   [@moinfra](https://github.com/moinfra) for the original web-compatible fork of the MCP TypeScript SDK
